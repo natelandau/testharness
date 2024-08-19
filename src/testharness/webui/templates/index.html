@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test Harness</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Test Harness</h1>
+        <div class="grid">
+            <div>
+                <h2>Session</h2>
+                <ul>
+                    {% for key, value in session.items() %}
+                    <li><small><strong>{{key}}:</strong>
+                            <code>{{value}}</code></small>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h2>Headers</h2>
+                <ul>
+                    {% for key, value in headers.items() %}
+                    <li><small><strong>{{key}}:</strong> <code>{{value}}</code></small></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h2>Settings</h2>
+                <ul>
+                    {% for key, value in settings.items() %}
+                    <li><small><strong>{{key}}:</strong> <code>{{value}}</code></small></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
