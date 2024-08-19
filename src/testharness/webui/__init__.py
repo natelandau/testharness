@@ -21,9 +21,8 @@ app.config["SECRET_KEY"] = TestharnessConfig().webui_secret_key
 
 
 app.config["SESSION_TYPE"] = "redis"
-app.config["SESSION_REVERSE_PROXY"] = (
-    "true" if TestharnessConfig().webui_behind_reverse_proxy else "false"
-)
+app.config["SESSION_REVERSE_PROXY"] = bool(TestharnessConfig().webui_behind_reverse_proxy)
+app.config["SESSION_PROTECTION"] = True
 app.config["SESSION_URI"] = (
     (f"redis://:{TestharnessConfig().redis_password}@{TestharnessConfig().redis_addr}")
     if {TestharnessConfig().redis_addr}
