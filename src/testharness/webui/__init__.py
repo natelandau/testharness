@@ -1,6 +1,7 @@
 """Webui test harness package."""
 
 import asyncio
+import random
 from pathlib import Path
 
 from hypercorn.asyncio import serve
@@ -19,10 +20,9 @@ app.config["SECRET_KEY"] = TestharnessConfig().webui_secret_key
 
 
 app.config["SESSION_TYPE"] = "redis"
-# app.config["SESSION_REVERSE_PROXY"] = (
-#     "true" if TestharnessConfig().webui_behind_reverse_proxy else "false"
-# )
-app.config["SESSION_REVERSE_PROXY"] = "true"
+app.config["SESSION_REVERSE_PROXY"] = (
+    "true" if TestharnessConfig().webui_behind_reverse_proxy else "false"
+)
 app.config["SESSION_URI"] = (
     (f"redis://:{TestharnessConfig().redis_password}@{TestharnessConfig().redis_addr}")
     if {TestharnessConfig().redis_addr}
@@ -34,9 +34,21 @@ Session(app)
 @app.route("/")
 async def homepage() -> str:
     """Serve a static file from the root directory."""
-    session["test"] = "test"
-    # console.log(f"{request.headers=}")
-    # console.log(f"{session=}")
+    session["message"] = random.choice(
+        [
+            "Hello",
+            "Hi",
+            "Hey",
+            "Howdy",
+            "aloha",
+            "shalom",
+            "hola",
+            "bonjour",
+            "salaam",
+            "olá",
+            "salut",
+        ]
+    )
     settings_object = TestharnessConfig().model_dump(mode="python")
     console.log(f"{settings_object=}")
 
