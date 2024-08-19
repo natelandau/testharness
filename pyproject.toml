@@ -11,7 +11,7 @@
     name        = "testharness"
     readme      = "README.md"
     repository  = "https://github.com/natelandau/testharness"
-    version     = "0.2.1"
+    version     = "0.2.2"
 
     [tool.poetry.scripts] # https://python-poetry.org/docs/pyproject/#scripts
         testharness = "testharness.testharness:app"
