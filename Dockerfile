@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y git tzdata
 RUN pip install poetry
 
 # Install dependencies and script
-RUN poetry install --without dev,test
+RUN poetry install --without dev
 
 # Set the entrypoint to run the script
 ENTRYPOINT ["poetry", "run", "testharness"]
