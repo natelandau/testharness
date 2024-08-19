@@ -1,6 +1,7 @@
 """Webui test harness package."""
 
 import asyncio
+import os
 import random
 from pathlib import Path
 
@@ -58,7 +59,11 @@ async def homepage() -> str:
         k: v for (k, v) in request.headers.items() if k not in ["Accept", "Cookie", "User-Agent"]
     }
 
-    return await render_template("index.html", settings=settings, headers=headers)
+    env_vars = {k: v for (k, v) in os.environ.items() if k not in ["PS1", "LS_COLORS", "PATH"]}
+
+    return await render_template(
+        "index.html", settings=settings, headers=headers, env_vars=env_vars
+    )
 
 
 async def run_webui() -> None:
