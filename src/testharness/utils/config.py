@@ -31,12 +31,10 @@ class TestharnessConfig(BaseConfig):  # type: ignore [misc]
     webui_port: str = "8000"
     webui_log_level: str = "INFO"
     webui_debug: ENV_BOOLEAN = False
-    webui_base_url: str = "http://127.0.0.1:8088"
     redis_password: str = ""
     redis_addr: str = "127.0.0.1:6379"
     webui_secret_key: str = ""
     webui_behind_reverse_proxy: ENV_BOOLEAN = False
-    something: str = "something"
 
     CONFIG_SOURCES: ClassVar[ConfigSources | None] = [
         EnvSource(prefix="TESTHARNESS_", file=DIR / ".env", allow_all=True),
