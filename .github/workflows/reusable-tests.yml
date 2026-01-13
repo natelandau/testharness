@@ -10,6 +10,23 @@ on:
                 type: boolean
                 default: false
 
+env:
+    VAPI_NAME: "ci-test"
+    VAPI_DEBUG: false
+    VAPI_AUTHENTICATION_ENCRYPTION_KEY: 95bfffc1521e76be955aa786f623f996c85f49e6a5788e126b85d1d630c30245
+    VAPI_RATE_LIMIT__ENCRYPTION_KEY: 95bfffc1521e76be955aa786f623f996c85f49e6a5788e126b85d1d630c30245
+    VAPI_MONGO__URI: "mongodb://localhost:27017"
+    VAPI_MONGO__DATABASE_NAME: "valentina-ci"
+    VAPI_REDIS__URL: "redis://localhost:6379/0"
+    VAPI_SERVER__HOST: 0.0.0.0
+    VAPI_SERVER__PORT: 8000
+    VAPI_SERVER__SCHEME: https
+    VAPI_CORS__ENABLED: false
+    VAPI_DOCKER_BOOTSTRAP: false
+    VAPI_OAUTH__DISCORD_CLIENT_ID: "1234567890"
+    VAPI_OAUTH__DISCORD_CLIENT_SECRET: "1234567890"
+    VAPI_OAUTH__DISCORD_CALLBACK_URL: "https://localhost:8000/api/v1/oauth/discord/callback"
+
 jobs:
     test-python-code:
         runs-on: ubuntu-latest
@@ -43,6 +60,11 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v6
+
+            - uses: actions/cache@v4
+              with:
+                  path: ~/.cache/prek
+                  key: prek-${{ hashFiles('.pre-commit-config.yaml') }}
 
             - name: Setup Python, uv, and the package
               uses: ./.github/actions/setup_python_env
