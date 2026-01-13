@@ -1,3 +1,3 @@
-# TestHarness
+# A Test Project
 
-temp repository.
+Please ignore this repository. It is a test project for testing GitHub Actions.

@@ -1,54 +1,25 @@
-# Scratch folder for temporary files
-scratch/
-*.rdb
-
-# Caches
-*_cache/
+# Python-generated files
 __pycache__/
-
-# Coverage.py
-htmlcov/
-reports/
-
-# cruft
-*.rej
-
-# Data
-*.csv*
-*.dat*
-*.pickle*
-*.xls*
-*.zip*
-
-.envrc
-.env
-
-# Jupyter
-*.ipynb
-.ipynb_checkpoints/
-notebooks/
-
-# macOS
-.DS_Store
-
-# mypy
-.dmypy.json
-
-# Node.js
-node_modules/
-
-# Poetry
-.venv/
+*.py[oc]
+build/
 dist/
+wheels/
+*.egg-info
 
-# PyCharm
-.idea/
+# Virtual environments
+.venv
 
-# pyenv
-.python-version
+# Development files
+.cache/
+.dev/
+tmp/
+.env.secret
+tmp.py
+bruno/
+_site/
 
-# Python
-*.py[cdo]
-
-# act run workflows locally
-bin/act
+# AI Tooling
+.cursor/
+.github/copilot-instructions.md
+.github/instructions/
+GEMINI.md

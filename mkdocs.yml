@@ -1,0 +1,106 @@
+---
+# schema: https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: Valentina Noir
+site_url: "https://valentina-noir.com"
+repo_url: "https://github.com/natelandau/valentina-noir"
+repo_name: "natelandau/valentina-noir"
+copyright: Copyright &copy; 2026 Nathaniel Landau
+
+nav:
+  - Home: index.md
+  - Rules and Gameplay:
+      - gameplay/index.md
+      - Campaigns: gameplay/campaigns.md
+      - Character Creation: gameplay/characters.md
+      - Rolling Dice: gameplay/rolling-dice.md
+      - Storyteller Tools: gameplay/storytellers.md
+      - Settings: gameplay/settings.md
+  - Development:
+      - development/index.md
+      - Companies: development/companies.md
+      - Authentication: development/authentication.md
+      - User Authorization: development/authorization.md
+      - Error Handling: development/errors.md
+      - Pagination: development/pagination.md
+      - Rate Limiting: development/rate-limiting.md
+      - Idempotency: development/idempotency.md
+
+theme:
+  name: material
+  icon:
+    logo: fontawesome/solid/dice
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.footer
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.tooltips
+    - content.code.copy
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.betterem:
+      smart_enable: all
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      pygments_lang_class: true
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - css/material.css
+  - css/mkdocstrings.css
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
