@@ -1,5 +1,5 @@
 ---
-name: "Deploy Docs"
+name: "Documentation Build and Deploy"
 
 on:
     workflow_dispatch:
@@ -61,9 +61,3 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
-
-            - name: Save build cache
-              uses: actions/cache/save@v4
-              with:
-                  key: mkdocs-material-${{ hashfiles('.cache/**') }}
-                  path: ~/.cache

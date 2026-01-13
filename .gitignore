@@ -16,7 +16,6 @@ tmp/
 .env.secret
 tmp.py
 bruno/
-_site/
 
 # AI Tooling
 .cursor/

@@ -1,4 +1,4 @@
-# Valentina Noir Updated again
+# Valentina Noir
 
 ![Valentina Noir](https://cdn.valentina-noir.com/assets/valentina512.png)
 

@@ -1,5 +1,5 @@
 [project]
-    authors = [{ name = "Nathaniel Landau", email = "github@natenate.org" }]
+    authors = [{ name = "Nathaniel Landau", email = "nate@natelandau.com" }]
     dependencies = [
         "asyncio>=4.0.0",
         "beanie>=2.0.1,<3.0.0",
@@ -21,14 +21,14 @@
         "ruamel-yaml>=0.19.1",
         "semver>=3.0.4",
     ]
-    description = "Test project for testing GitHub Actions."
-    name = "test-project"
+    description = "Valentina Noir is a comprehensive API for managing World of Darkness tabletop role-playing games."
+    name = "vapi"
     readme = "README.md"
     requires-python = ">=3.13"
     version = "0.1.0"
 
     [project.scripts]
-        app = "test_project.app:main"
+        app = "vapi.__main__:run_cli"
 
 [build-system]
     build-backend = "uv_build"
