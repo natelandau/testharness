@@ -33,7 +33,7 @@ jobs:
 
             - name: Build documentation
               shell: bash
-              run: uv run mkdocs build --clean --strict --site-dir _site
+              run: mkdocs build --clean --strict --site-dir _site
 
             - name: Adjust permissions
               shell: bash
