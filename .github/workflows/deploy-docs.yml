@@ -29,7 +29,7 @@ jobs:
               uses: ./.github/actions/setup_python_env
               with:
                   python-version: "3.13"
-                  install-groups: "--only-groups docs"
+                  install-groups: "--only-group docs"
 
             - name: Build documentation
               shell: bash
