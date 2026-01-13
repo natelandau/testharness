@@ -28,7 +28,7 @@
     version = "0.1.0"
 
     [project.scripts]
-        app = "vapi.__main__:run_cli"
+        app = "test_project.app:main"
 
 [build-system]
     build-backend = "uv_build"
